@@ -22,8 +22,8 @@ from launch.substitutions import Command, LaunchConfiguration
 
 def generate_launch_description():
 
-    config_pkg_share = launch_ros.substitutions.FindPackageShare().find("champ_config")
-    descr_pkg_share = launch_ros.substitutions.FindPackageShare().find("champ_description")
+    config_pkg_share = get_package_share_directory("champ_config")
+    descr_pkg_share = get_package_share_directory("champ_description")
 
     joints_config = os.path.join(config_pkg_share, "config/joints/joints.yaml")
     gait_config = os.path.join(config_pkg_share, "config/gait/gait.yaml")
